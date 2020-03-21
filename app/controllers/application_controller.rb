@@ -18,6 +18,7 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     user = User.new(:username => params[:username], :password => params[:password], :balance => params[:balance])
+    user.balance = 0
     #binding.pry 
     user.balance = 0
     if user.save
